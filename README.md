@@ -1,4 +1,5 @@
-I'd be happy to talk to you, coffee:coffee: or tea:tea:, so send me an email at mr@allen.tools to write a letter. If you're looking for my code repos they currently are at github.com/kayfay. I don't operate as a business anymore and this website is more or less a personal site, but if you want to direct chat with me connect with me on linkedin.com/in/allentools.
+I'd be happy to talk to you, coffee:coffee: or tea:tea:, so send me an email at [Mr@Allen.Tools](tel:Mr@Allen.Tools) to write a letter. If you're looking for my code repos they currently are at [github.com/kayfay](http://www.github.com/kayfay). I don't operate as a business anymore and this website is more or less a personal site, but if you want to direct chat with me connect with me on [linkedin.com/in/allentools](http://www.linkedin.com/in/allentools).
+
 
 About Me
 
