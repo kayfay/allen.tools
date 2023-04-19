@@ -1,6 +1,6 @@
 About Me
 
-I am a data scientist :bar_chart: and engineer :computer::wrench:, a friend, and a healthy lifestyle enthusiast.
+I am a data scientist :bar_chart: and engineer :computer::wrench:.
 
 My life began at Tallahassee Memorial Hospital :hospital::sagittarius:; I was in Tallahassee until I was two or three years old when my family decided to move to Miami. My mother says that her husband gave her an ultimatum about leaving to go to Miami. After moving in with my grandfather, into a two-story on a quarter-acre of land in coral gables, and getting into trouble, they eventually divorced. My grandfather was a chemical engineer, and my father earned his bachelor's degree in history while my mother worked in a grocery, and I grew up in apartments that my mother could afford. I didn't have a close relationship with my father, and over time, most of my family became distant with a problematic contact. So before my thirties, I felt that there wasn't much more I could do and decided to move on with my life.
 
