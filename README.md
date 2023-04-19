@@ -1,4 +1,4 @@
-eAbout Me
+About Me
 
 I am a data scientist :bar_chart: and engineer :computer::wrench:, a friend, and a healthy lifestyle enthusiast.
 
