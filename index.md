@@ -15,4 +15,17 @@ I started taking courses in computer science and took calculus, linear algebra, 
 
 I'm an American :it::es::fr:, always up for card playing :diamonds::hearts::spades::clubs:
 
-In my personal life, I am a Knight with the Catholic :church: organization, the Knights of Columbus, where I feel they are a family of sisters and brothers who I can volunteer and spend time. I also took coursework for an associate's degree in health sciences, including weight lifting and nutrition, so I enjoy physical training and conditioning myself daily for good health. I also regularly enjoy martial arts, science fiction, and supernatural movies and entertainment; otherwise, I'm reading or doing research :notebook::memo: thanks to my college degree being a great influence on me in structured intellectual curiosities. So that's mostly everything there is to know about me. 
+In my personal life, I am a Knight with the Catholic :church: organization, the Knights of Columbus, where I feel they are a family of sisters and brothers who I can volunteer and spend time. I also took coursework for an associate's degree in health sciences, including weight lifting and nutrition, so I enjoy physical training and conditioning myself daily for good health. I also regularly enjoy martial arts, science fiction, and supernatural movies and entertainment; otherwise, I'm reading or doing research :notebook::memo: thanks to my college degree being a great influence on me in structured intellectual curiosities. So that's mostly everything there is to know about me.
+
+## Recent Work
+
+I recently developed an **Advanced Time Series Analysis Dashboard** for restaurant sales forecasting and strategic decision making. This comprehensive business intelligence tool demonstrates the power of statistical analysis in real-world business applications.
+
+**Key Features:**
+- Advanced time series decomposition (STL)
+- Interactive data visualization
+- Seasonal pattern analysis
+- 12-week forecasting capability
+- Strategic business insights
+
+**[Explore the Dashboard](https://upsidetimeseries.allen.tools)** | **[Read the Blog Post](/blog/time-series-business-dashboard.html)** | **[View All Projects](/projects)** 

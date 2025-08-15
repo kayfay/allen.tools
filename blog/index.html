@@ -1,151 +1,282 @@
 <!DOCTYPE HTML>
-<html>
-	<title>Blog.Allen.Tools</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device=width, initial-scale=1">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html, body, h1, h2, h3, h4, h5 {font-family: "Raleway", sans-serif}
-</style>
-<body class="w3-light-grey">
-	<!-- Top container -->
-	<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-		<button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i> Menu</button>
-		<spam class="w3-bar-item w3-right">Logo</span>
-	</div>
-	<!-- Sidebar/menu -->
-	<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar">
-		<br>
-		<div class="w3-container w3-row">
-			<img src="/w3images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
-		</div>
-		<div class="w3-col s8 w3-bar">
-			<span>Welcome, <strong>Mike</strong></span><br>
-			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
-			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
-		</div>
-		<hr>
-		<div class="w3-container">
-			<h5>Dashboard</h5>
-		</div>
-		<div class="w3-bar-block">
-			<a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i> Close Menu</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i> Overview</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-eye fa-fw"></i> Views</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i> Traffic</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bullseye fa-fw"></i> Geo</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-diamond fa-fw"></i> Orders</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bell fa-fw"></i> News</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bank fa-fw"></i> General</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-history fa-fw"></i> History</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-cog fa-fw"></i> Settings</a>
-			<br>
-		</div>
-		</nav>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Allen.Tools</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Blog-specific styles that extend the main site design */
+        .blog-header {
+            background: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .blog-header h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        
+        .blog-header p {
+            color: var(--text-color);
+            text-align: center;
+            margin: 1rem 0 0 0;
+            font-size: 1.1rem;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+        
+        .blog-card h3 {
+            color: var(--primary-color);
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .blog-card h3 a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .blog-card h3 a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .blog-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .blog-excerpt {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .category-tag {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .read-more {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            display: inline-block;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .read-more:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .info-panel {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .info-panel h4 {
+            color: var(--primary-color);
+            margin: 0 0 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .info-panel ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        
+        .info-panel li {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        
+        .coming-soon {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+        }
+        
+        .coming-soon h4 {
+            color: white;
+        }
+        
+        .coming-soon ul {
+            color: white;
+        }
+        
+        .coming-soon li {
+            color: white;
+        }
+        
+        .blog-nav {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .blog-nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .blog-nav-brand a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .blog-nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+        
+        .blog-nav-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .blog-nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .blog-nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .blog-nav-links {
+                gap: 1rem;
+            }
+            
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Blog Navigation -->
+    <nav class="blog-nav">
+        <div class="blog-nav-content">
+            <div class="blog-nav-brand">
+                <a href="/">Allen.Tools</a>
+            </div>
+            <ul class="blog-nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-		<!-- Overlay effect when opening sidebar on small screens -->
-		<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" stye="cursor:pointer" title="close side menu" id="myOverlay"></div>
+    <main>
+        <!-- Blog Header -->
+        <div class="blog-header">
+            <h1><i class="fas fa-pencil-alt"></i> Blog</h1>
+            <p>Insights, analysis, and thoughts on data science, business intelligence, and technology</p>
+        </div>
 
-		<!-- !PAGE CONTENT! -->
-		<div class="w3-main" style="margin-left:300px;margin-top:43px;">
-			<!-- Header -->
-			<header class="w3-container" style="padding-top:22px">
-				<h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
-			</header>
+        <!-- Featured Blog Post -->
+        <div class="blog-card">
+            <h3><a href="time-series-business-dashboard.html">Advanced Time Series Analysis for Restaurant Sales Forecasting</a></h3>
+            <div class="blog-meta">
+                <span><i class="fas fa-calendar"></i> January 15, 2024</span>
+                <span class="category-tag">Data Science</span>
+                <span class="category-tag">Business Intelligence</span>
+                <span class="category-tag">Time Series Analysis</span>
+            </div>
+            <div class="blog-excerpt">
+                A comprehensive analysis of restaurant sales data using advanced time series decomposition techniques, revealing growth trends, seasonal patterns, and strategic business insights. This post showcases an interactive dashboard that demonstrates the power of statistical analysis in business decision making.
+            </div>
+            <a href="time-series-business-dashboard.html" class="read-more">
+                Read More <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
 
-			<div class="w3-row-padding w3-margin-bottom">
-				<div class="w3-quarter">
-					<div class="w3-container w3-red w3-padding-16">
-						<div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
-						<div class="w3-right">
-							<h3>52</h3>
-						</div>
-						<div class="w3-clear"></div>
-						<h4>Messages</h4>
-					</div>
-				</div>
-				<div class="w3-quarter">
-					<div class="w3-container w3-blue w3-padding-16">
-						<div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
-						<div class="w3-right">
-							<h3>99</h3>
-						</div>
-						<div class="w3-clear"></div>
-						<h4>Views</h4>
-					</div>
-				</div>
-				<div class="w3-quarter">
-					<div class="w3-container w3-teal w3-padding-16">
-						<div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
-						<div class="w3-right">
-							<h3>23</h3>
-						</div>
-						<div class="w3-clear"></div>
-						<h4>Shares</h4>
-					</div>
-				</div>
-				<div class="w3-quarter">
-					<div class="w3-container w3-orange w3-text-white w3-padding-16">
-						<div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-						<div class="w3-right">
-							<h3>50</h3>
-						</div>
-						<div class="w3-clear"></div>
-						<h4>Users</h4>
-					</div>
-				</div>
-				</div>
-				<div class="w3-panel">
-					<div class="w3-row-padding" style="margin:0 -16px">
-						<div class="w3-third">
-							<h5>Regions</h5>
-							<img src="/w3images/region.jpg" style="width:100%" alt="Google Regional Maps">
-						</div>
-						<div class="w3-twothird">
-							<h5>Feeds</h5>
-							<table class="w3-table w3-stripped w3-white">
-								<tr>
-									<td><i class="fa fa-user w3-text-blue w3-large"></i></td>
-									<td>New record, over 90 views.</td>
-									<td><i>10 mins</i></td>
-								</tr>
+        <!-- Coming Soon Section -->
+        <div class="info-panel coming-soon">
+            <h4><i class="fas fa-lightbulb"></i> More Posts Coming Soon</h4>
+            <p>I'm working on several new blog posts covering:</p>
+            <ul>
+                <li>Machine Learning Applications in Business Analytics</li>
+                <li>Statistical Analysis Case Studies</li>
+                <li>Data Visualization Best Practices</li>
+                <li>Research Methodology in Data Science</li>
+            </ul>
+        </div>
 
-								<tr>
-									<td><i class="fa fa-bell w3-text-red w3-large"></i></td>
-									<td>Database error.</td>
-									<td><i>15 mins</i></td>
-								</tr>
+        <!-- About the Blog -->
+        <div class="info-panel">
+            <h4><i class="fas fa-info-circle"></i> About This Blog</h4>
+            <p>This blog focuses on data science, business intelligence, and statistical analysis. I share insights from my work in data science and engineering, including case studies, technical tutorials, and practical applications of statistical methods in business contexts.</p>
+        </div>
+    </main>
 
-
-
-								<!-- End of page content -->
-	<script>
-		// Get the side bar
-		var mySidebar = document.getElementById("mySidebar");
-
-		// Get the DIV with overlay effect
-		var overlayBg = document.getElementById("myOverlay");
-
-		// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-	if (mySideBar.style.display === 'block') {
-		mySidebar.style.display = 'none';
-		overlayBg.style.display = 'none';
-	} else {
-		mySidebar.style.display = 'block';
-		overlayBg.style.display = 'block';
-	}
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-	mySidebar.style.display = "none";
-	overlayBg.style.display = "none";
-}
-
-	</script>
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://linkedin.com/in/allentools" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/kayfay" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <p>&copy; 2024 Allen.Tools. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

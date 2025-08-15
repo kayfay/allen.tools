@@ -41,6 +41,29 @@ title: Projects
 </div>
 
 <div class="project-card">
+    <h3>Advanced Time Series Business Dashboard</h3>
+    <p>A comprehensive business intelligence dashboard for restaurant sales forecasting and strategic decision making. This project demonstrates advanced time series decomposition techniques and interactive data visualization.</p>
+    
+    <h4>Key Features:</h4>
+    <ul>
+        <li>Advanced time series decomposition (STL)</li>
+        <li>Interactive charts with zoom and pan capabilities</li>
+        <li>Seasonal pattern analysis and heatmaps</li>
+        <li>Business intelligence insights and forecasting</li>
+        <li>Strategic planning recommendations</li>
+    </ul>
+    
+    <div class="project-links">
+        <a href="https://upsidetimeseries.allen.tools" class="btn" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-chart-line"></i> Live Dashboard
+        </a>
+        <a href="/blog/time-series-business-dashboard.html" class="btn" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-file-text"></i> Blog Post
+        </a>
+    </div>
+</div>
+
+<div class="project-card">
     <h3>Business Analytics Projects</h3>
     <p>Coming soon: A collection of business analytics projects demonstrating:</p>
     <ul>

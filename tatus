@@ -1,0 +1,424 @@
+[1mdiff --git a/New Bitmap image.bmp b/New Bitmap image.bmp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..fba17fe[m
+Binary files /dev/null and b/New Bitmap image.bmp differ
+[1mdiff --git a/blog/index.html b/blog/index.html[m
+[1mindex 95108a5..5533a0c 100644[m
+[1m--- a/blog/index.html[m
+[1m+++ b/blog/index.html[m
+[36m@@ -1,151 +1,282 @@[m
+ <!DOCTYPE HTML>[m
+[31m-<html>[m
+[31m-	<title>Blog.Allen.Tools</title>[m
+[31m-	<meta charset="UTF-8">[m
+[31m-	<meta name="viewport" content="width=device=width, initial-scale=1">[m
+[31m-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">[m
+[31m-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">[m
+[31m-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">[m
+[31m-<style>[m
+[31m-html, body, h1, h2, h3, h4, h5 {font-family: "Raleway", sans-serif}[m
+[31m-</style>[m
+[31m-<body class="w3-light-grey">[m
+[31m-	<!-- Top container -->[m
+[31m-	<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">[m
+[31m-		<button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i> Menu</button>[m
+[31m-		<spam class="w3-bar-item w3-right">Logo</span>[m
+[31m-	</div>[m
+[31m-	<!-- Sidebar/menu -->[m
+[31m-	<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar">[m
+[31m-		<br>[m
+[31m-		<div class="w3-container w3-row">[m
+[31m-			<img src="/w3images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">[m
+[31m-		</div>[m
+[31m-		<div class="w3-col s8 w3-bar">[m
+[31m-			<span>Welcome, <strong>Mike</strong></span><br>[m
+[31m-			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>[m
+[31m-			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>[m
+[31m-			<a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>[m
+[31m-		</div>[m
+[31m-		<hr>[m
+[31m-		<div class="w3-container">[m
+[31m-			<h5>Dashboard</h5>[m
+[31m-		</div>[m
+[31m-		<div class="w3-bar-block">[m
+[31m-			<a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i> Close Menu</a>[m
+[31m-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i> Overview</a>[m
+[31m-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-eye fa-fw"></i> Views</a>[m
+[31m-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i> Traffic</a>[m
+[31m-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bullseye fa-fw"></i> Geo</a>[m
+[31m-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-diamond fa-fw"></i> Orders</a>[m
+[31m-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bell fa-fw"></i> News</a>[m
+[31m-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bank fa-fw"></i> General</a>[m
+[31m-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-history fa-fw"></i> History</a>[m
+[31m-			<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-cog fa-fw"></i> Settings</a>[m
+[31m-			<br>[m
+[31m-		</div>[m
+[31m-		</nav>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <title>Blog - Allen.Tools</title>[m
+[32m+[m[32m    <link rel="stylesheet" href="/assets/css/style.css">[m
+[32m+[m[32m    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">[m
+[32m+[m[32m    <style>[m
+[32m+[m[32m        /* Blog-specific styles that extend the main site design */[m
+[32m+[m[32m        .blog-header {[m
+[32m+[m[32m            background: white;[m
+[32m+[m[32m            padding: 2rem 0;[m
+[32m+[m[32m            margin-bottom: 2rem;[m
+[32m+[m[32m            border-bottom: 1px solid #eee;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .blog-header h1 {[m
+[32m+[m[32m            color: var(--primary-color);[m
+[32m+[m[32m            margin: 0;[m
+[32m+[m[32m            font-size: 2.5rem;[m
+[32m+[m[32m            text-align: center;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .blog-header p {[m
+[32m+[m[32m            color: var(--text-color);[m
+[32m+[m[32m            text-align: center;[m
+[32m+[m[32m            margin: 1rem 0 0 0;[m
+[32m+[m[32m            font-size: 1.1rem;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .blog-card {[m
+[32m+[m[32m            background: white;[m
+[32m+[m[32m            border-radius: 8px;[m
+[32m+[m[32m            padding: 2rem;[m
+[32m+[m[32m            margin-bottom: 2rem;[m
+[32m+[m[32m            box-shadow: 0 2px 4px rgba(0,0,0,0.1);[m
+[32m+[m[32m            transition: box-shadow 0.3s ease, transform 0.3s ease;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .blog-card:hover {[m
+[32m+[m[32m            box-shadow: 0 4px 12px rgba(0,0,0,0.15);[m
+[32m+[m[32m            transform: translateY(-2px);[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .blog-card h3 {[m
+[32m+[m[32m            color: var(--primary-color);[m
+[32m+[m[32m            margin: 0 0 1rem 0;[m
+[32m+[m[32m            font-size: 1.5rem;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .blog-card h3 a {[m
+[32m+[m[32m            color: var(--primary-color);[m
+[32m+[m[32m            text-decoration: none;[m
+[32m+[m[32m            transition: color 0.3s ease;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .blog-card h3 a:hover {[m
+[32m+[m[32m            color: var(--secondary-color);[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .blog-meta {[m
+[32m+[m[32m            color: #666;[m
+[32m+[m[32m            font-size: 0.9rem;[m
+[32m+[m[32m            margin-bottom: 1rem;[m
+[32m+[m[32m            display: flex;[m
+[32m+[m[32m            align-items: center;[m
+[32m+[m[32m            gap: 1rem;[m
+[32m+[m[32m            flex-wrap: wrap;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .blog-excerpt {[m
+[32m+[m[32m            color: var(--text-color);[m
+[32m+[m[32m            line-height: 1.6;[m
+[32m+[m[32m            margin-bottom: 1.5rem;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .category-tag {[m
+[32m+[m[32m            background: var(--secondary-color);[m
+[32m+[m[32m            color: white;[m
+[32m+[m[32m            padding: 0.25rem 0.75rem;[m
+[32m+[m[32m            border-radius: 20px;[m
+[32m+[m[32m            font-size: 0.8rem;[m
+[32m+[m[32m            font-weight: 500;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .read-more {[m
+[32m+[m[32m            background: var(--secondary-color);[m
+[32m+[m[32m            color: white;[m
+[32m+[m[32m            padding: 0.75rem 1.5rem;[m
+[32m+[m[32m            text-decoration: none;[m
+[32m+[m[32m            border-radius: 6px;[m
+[32m+[m[32m            display: inline-block;[m
+[32m+[m[32m            font-weight: 500;[m
+[32m+[m[32m            transition: background-color 0.3s ease;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .read-more:hover {[m
+[32m+[m[32m            background: var(--primary-color);[m
+[32m+[m[32m            color: white;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .info-panel {[m
+[32m+[m[32m            background: white;[m
+[32m+[m[32m            padding: 2rem;[m
+[32m+[m[32m            border-radius: 8px;[m
+[32m+[m[32m            box-shadow: 0 2px 4px rgba(0,0,0,0.1);[m
+[32m+[m[32m            margin-bottom: 2rem;[m
+[32m+[m[32m            border-left: 4px solid var(--secondary-color);[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .info-panel h4 {[m
+[32m+[m[32m            color: var(--primary-color);[m
+[32m+[m[32m            margin: 0 0 1rem 0;[m
+[32m+[m[32m            display: flex;[m
+[32m+[m[32m            align-items: center;[m
+[32m+[m[32m            gap: 0.5rem;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .info-panel ul {[m
+[32m+[m[32m            margin: 0;[m
+[32m+[m[32m            padding-left: 1.5rem;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .info-panel li {[m
+[32m+[m[32m            margin-bottom: 0.5rem;[m
+[32m+[m[32m            color: var(--text-color);[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .coming-soon {[m
+[32m+[m[32m            background: linear-gradient(135deg, var(--secondary-color), #2980b9);[m
+[32m+[m[32m            color: white;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .coming-soon h4 {[m
+[32m+[m[32m            color: white;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .coming-soon ul {[m
+[32m+[m[32m            color: white;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .coming-soon li {[m
+[32m+[m[32m            color: white;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .blog-nav {[m
+[32m+[m[32m            background: white;[m
+[32m+[m[32m            padding: 1rem 2rem;[m
+[32m+[m[32m            box-shadow: 0 2px 4px rgba(0,0,0,0.1);[m
+[32m+[m[32m            margin-bottom: 2rem;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .blog-nav-content {[m
+[32m+[m[32m            max-width: 1200px;[m
+[32m+[m[32m            margin: 0 auto;[m
+[32m+[m[32m            display: flex;[m
+[32m+[m[32m            justify-content: space-between;[m
+[32m+[m[32m            align-items: center;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .blog-nav-brand a {[m
+[32m+[m[32m            color: var(--primary-color);[m
+[32m+[m[32m            text-decoration: none;[m
+[32m+[m[32m            font-size: 1.5rem;[m
+[32m+[m[32m            font-weight: bold;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .blog-nav-links {[m
+[32m+[m[32m            display: flex;[m
+[32m+[m[32m            list-style: none;[m
+[32m+[m[32m            margin: 0;[m
+[32m+[m[32m            padding: 0;[m
+[32m+[m[32m            gap: 2rem;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .blog-nav-links a {[m
+[32m+[m[32m            color: var(--primary-color);[m
+[32m+[m[32m            text-decoration: none;[m
+[32m+[m[32m            font-weight: 500;[m
+[32m+[m[32m            transition: color 0.3s ease;[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        .blog-nav-links a:hover {[m
+[32m+[m[32m            color: var(--secondary-color);[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        @media (max-width: 768px) {[m
+[32m+[m[32m            .blog-nav-content {[m
+[32m+[m[32m                flex-direction: column;[m
+[32m+[m[32m                gap: 1rem;[m
+[32m+[m[32m            }[m
+[32m+[m[41m            [m
+[32m+[m[32m            .blog-nav-links {[m
+[32m+[m[32m                gap: 1rem;[m
+[32m+[m[32m            }[m
+[32m+[m[41m            [m
+[32m+[m[32m            .blog-header h1 {[m
+[32m+[m[32m                font-size: 2rem;[m
+[32m+[m[32m            }[m
+[32m+[m[41m            [m
+[32m+[m[32m            .blog-meta {[m
+[32m+[m[32m                flex-direction: column;[m
+[32m+[m[32m                align-items: flex-start;[m
+[32m+[m[32m                gap: 0.5rem;[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m[32m    </style>[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m[32m    <!-- Blog Navigation -->[m
+[32m+[m[32m    <nav class="blog-nav">[m
+[32m+[m[32m        <div class="blog-nav-content">[m
+[32m+[m[32m            <div class="blog-nav-brand">[m
+[32m+[m[32m                <a href="/">Allen.Tools</a>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <ul class="blog-nav-links">[m
+[32m+[m[32m                <li><a href="/">Home</a></li>[m
+[32m+[m[32m                <li><a href="/projects">Projects</a></li>[m
+[32m+[m[32m                <li><a href="/contact">Contact</a></li>[m
+[32m+[m[32m            </ul>[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m    </nav>[m
+ [m
+[31m-		<!-- Overlay effect when opening sidebar on small screens -->[m
+[31m-		<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" stye="cursor:pointer" title="close side menu" id="myOverlay"></div>[m
+[32m+[m[32m    <main>[m
+[32m+[m[32m        <!-- Blog Header -->[m
+[32m+[m[32m        <div class="blog-header">[m
+[32m+[m[32m            <h1><i class="fas fa-pencil-alt"></i> Blog</h1>[m
+[32m+[m[32m            <p>Insights, analysis, and thoughts on data science, business intelligence, and technology</p>[m
+[32m+[m[32m        </div>[m
+ [m
+[31m-		<!-- !PAGE CONTENT! -->[m
+[31m-		<div class="w3-main" style="margin-left:300px;margin-top:43px;">[m
+[31m-			<!-- Header -->[m
+[31m-			<header class="w3-container" style="padding-top:22px">[m
+[31m-				<h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>[m
+[31m-			</header>[m
+[32m+[m[32m        <!-- Featured Blog Post -->[m
+[32m+[m[32m        <div class="blog-card">[m
+[32m+[m[32m            <h3><a href="time-series-business-dashboard.html">Advanced Time Series Analysis for Restaurant Sales Forecasting</a></h3>[m
+[32m+[m[32m            <div class="blog-meta">[m
+[32m+[m[32m                <span><i class="fas fa-calendar"></i> January 15, 2024</span>[m
+[32m+[m[32m                <span class="category-tag">Data Science</span>[m
+[32m+[m[32m                <span class="category-tag">Business Intelligence</span>[m
+[32m+[m[32m                <span class="category-tag">Time Series Analysis</span>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div class="blog-excerpt">[m
+[32m+[m[32m                A comprehensive analysis of restaurant sales data using advanced time series decomposition techniques, revealing growth trends, seasonal patterns, and strategic business insights. This post showcases an interactive dashboard that demonstrates the power of statistical analysis in business decision making.[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <a href="time-series-business-dashboard.html" class="read-more">[m
+[32m+[m[32m                Read More <i class="fas fa-arrow-right"></i>[m
+[32m+[m[32m            </a>[m
+[32m+[m[32m        </div>[m
+ [m
+[31m-			<div class="w3-row-padding w3-margin-bottom">[m
+[31m-				<div class="w3-quarter">[m
+[31m-					<div class="w3-container w3-red w3-padding-16">[m
+[31m-						<div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>[m
+[31m-						<div class="w3-right">[m
+[31m-							<h3>52</h3>[m
+[31m-						</div>[m
+[31m-						<div class="w3-clear"></div>[m
+[31m-						<h4>Messages</h4>[m
+[31m-					</div>[m
+[31m-				</div>[m
+[31m-				<div class="w3-quarter">[m
+[31m-					<div class="w3-container w3-blue w3-padding-16">[m
+[31m-						<div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>[m
+[31m-						<div class="w3-right">[m
+[31m-							<h3>99</h3>[m
+[31m-						</div>[m
+[31m-						<div class="w3-clear"></div>[m
+[31m-						<h4>Views</h4>[m
+[31m-					</div>[m
+[31m-				</div>[m
+[31m-				<div class="w3-quarter">[m
+[31m-					<div class="w3-container w3-teal w3-padding-16">[m
+[31m-						<div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>[m
+[31m-						<div class="w3-right">[m
+[31m-							<h3>23</h3>[m
+[31m-						</div>[m
+[31m-						<div class="w3-clear"></div>[m
+[31m-						<h4>Shares</h4>[m
+[31m-					</div>[m
+[31m-				</div>[m
+[31m-				<div class="w3-quarter">[m
+[31m-					<div class="w3-container w3-orange w3-text-white w3-padding-16">[m
+[31m-						<div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>[m
+[31m-						<div class="w3-right">[m
+[31m-							<h3>50</h3>[m
+[31m-						</div>[m
+[31m-						<div class="w3-clear"></div>[m
+[31m-						<h4>Users</h4>[m
+[31m-					</div>[m
+[31m-				</div>[m
+[31m-				</div>[m
+[31m-				<div class="w3-panel">[m
+[31m-					<div class="w3-row-padding" style="margin:0 -16px">[m
+[31m-						<div class="w3-third">[m
+[31m-							<h5>Regions</h5>[m
+[31m-							<img src="/w3images/region.jpg" style="width:100%" alt="Google Regional Maps">[m
+[31m-						</div>[m
+[31m-						<div class="w3-twothird">[m
+[31m-							<h5>Feeds</h5>[m
+[31m-							<table class="w3-table w3-stripped w3-white">[m
+[31m-								<tr>[m
+[31m-									<td><i class="fa fa-user w3-text-blue w3-large"></i></td>[m
+[31m-									<td>New record, over 90 views.</td>[m
+[31m-									<td><i>10 mins</i></td>[m
+[31m-								</tr>[m
+[32m+[m[32m        <!-- Coming Soon Section -->[m
+[32m+[m[32m        <div class="info-panel coming-soon">[m
+[32m+[m[32m            <h4><i class="fas fa-lightbulb"></i> More Posts Coming Soon</h4>[m
+[32m+[m[32m            <p>I'm working on several new blog posts covering:</p>[m
+[32m+[m[32m            <ul>[m
+[32m+[m[32m                <li>Machine Learning Applications in Business Analytics</li>[m
+[32m+[m[32m                <li>Statistical Analysis Case Studies</li>[m
+[32m+[m[32m                <li>Data Visualization Best Practices</li>[m
+[32m+[m[32m                <li>Research Methodology in Data Science</li>[m
+[32m+[m[32m            </ul>[m
+[32m+[m[32m        </div>[m
+ [m
+[31m-								<tr>[m
+[31m-									<td><i class="fa fa-bell w3-text-red w3-large"></i></td>[m
+[31m-									<td>Database error.</td>[m
+[31m-									<td><i>15 mins</i></td>[m
+[31m-								</tr>[m
+[32m+[m[32m        <!-- About the Blog -->[m
+[32m+[m[32m        <div class="info-panel">[m
+[32m+[m[32m            <h4><i class="fas fa-info-circle"></i> About This Blog</h4>[m
+[32m+[m[32m            <p>This blog focuses on data science, business intelligence, and statistical analysis. I share insights from my work in data science and engineering, including case studies, technical tutorials, and practical applications of statistical methods in business contexts.</p>[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m    </main>[m
+ [m
+[31m-[m
+[31m-[m
+[31m-								<!-- End of page content -->[m
+[31m-	<script>[m
+[31m-		// Get the side bar[m
+[31m-		var mySidebar = document.getElementById("mySidebar");[m
+[31m-[m
+[31m-		// Get the DIV with overlay effect[m
+[31m-		var overlayBg = document.getElementById("myOverlay");[m
+[31m-[m
+[31m-		// Toggle between showing and hiding the sidebar, and add overlay effect[m
+[31m-function w3_open() {[m
+[31m-	if (mySideBar.style.display === 'block') {[m
+[31m-		mySidebar.style.display = 'none';[m
+[31m-		overlayBg.style.display = 'none';[m
+[31m-	} else {[m
+[31m-		mySidebar.style.display = 'block';[m
+[31m-		overlayBg.style.display = 'block';[m
+[31m-	}[m
+[31m-}[m
+[31m-[m
+[31m-// Close the sidebar with the close button[m
+[31m-function w3_close() {[m
+[31m-	mySidebar.style.display = "none";[m
+[31m-	overlayBg.style.display = "none";[m
+[31m-}[m
+[31m-[m
+[31m-	</script>[m
+[32m+[m[32m    <footer>[m
+[32m+[m[32m        <div class="footer-content">[m
+[32m+[m[32m            <div class="social-links">[m
+[32m+[m[32m                <a href="https://linkedin.com/in/allentools" target="_blank" rel="noopener noreferrer">[m
+[32m+[m[32m                    <i class="fab fa-linkedin"></i>
