@@ -28,4 +28,4 @@ I recently developed an **Advanced Time Series Analysis Dashboard** for restaura
 - 12-week forecasting capability
 - Strategic business insights
 
-**[Explore the Dashboard](https://upsidetimeseries.allen.tools)** | **[Read the Blog Post](/blog/time-series-business-dashboard.html)** | **[View All Projects](/projects)** 
+**[Explore the Dashboard](https://upsidetimeseries.allen.tools)** | **[Read the Blog Post](/blog/time-series-business-dashboard.html)** | **[View All Posts](/blog)** 
