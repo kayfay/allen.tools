@@ -10,7 +10,7 @@ title: Home
 
 ## Executive Summary
 
-Experienced data scientist and engineer with expertise in time series analysis, machine learning, and business intelligence solutions. Specialized in developing predictive analytics dashboards and statistical modeling for strategic business decision-making. Proven track record of delivering actionable insights through advanced data analysis and interactive visualization systems.
+Experienced data scientist and engineer with a Master's degree in Business Analytics and expertise in time series analysis, machine learning, and business intelligence solutions. Specialized in developing predictive analytics dashboards and statistical modeling for strategic business decision-making. Proven track record of delivering actionable insights through advanced data analysis and interactive visualization systems.
 
 ---
 
@@ -20,6 +20,7 @@ Experienced data scientist and engineer with expertise in time series analysis, 
 - **Programming Languages**: Python, R, JavaScript, C++, Java, SQL
 - **Data Science & Analytics**: Time Series Analysis, Statistical Modeling, Machine Learning, Predictive Analytics
 - **Business Intelligence**: Interactive Dashboards, Data Visualization, ETL Processes, Database Design
+- **Advanced Analytics**: Data Mining, Linear Regression, Forecasting Models, Business Analytics
 - **Tools & Technologies**: STL Decomposition, Statistical Analysis, Data Mining, Text Processing
 - **Web Technologies**: HTML, CSS, Unix/Linux Systems, Shell Scripting
 
@@ -49,6 +50,11 @@ Experienced data scientist and engineer with expertise in time series analysis, 
 ---
 
 ## Education & Professional Development
+
+### **Master of Business Analytics** | Jacksonville University | 2019 - 2023
+- **Key Focus Areas**: Data Mining, Time Series Analysis & Forecasting, Predictive Analytics
+- **Capstone Project**: Linear Regression Analysis for Business Applications
+- **Advanced Statistical Modeling**: Applied business analytics and predictive modeling techniques
 
 ### **Bachelor of Science in Information Studies** | Data Science Concentration
 - **Minor**: Psychology (Experimental Design & Research Methodology)
