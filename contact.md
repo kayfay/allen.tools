@@ -3,9 +3,13 @@ layout: default
 title: Contact
 ---
 
-# Contact Me
+# Schedule a Consultation
 
-Feel free to reach out to me through any of the following methods:
+Ready to transform your data into actionable business insights? Let's discuss how data science and business intelligence can drive your organization's success.
+
+## Professional Consultation
+
+I offer comprehensive data science consulting services including predictive analytics, statistical modeling, and business intelligence solutions. Whether you need a one-time analysis or ongoing strategic support, I'm here to help you make data-driven decisions.
 
 ## Schedule a Meeting
 
@@ -34,8 +38,8 @@ Feel free to reach out to me through any of the following methods:
         </div>
         
         <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <label for="message">Project Details:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Please describe your data science or business intelligence needs..." required></textarea>
         </div>
         
         <button type="submit" class="btn">Send Message</button>
