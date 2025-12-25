@@ -4,7 +4,7 @@ title: Home
 ---
 
 # Allen Christopher Tools
-## Business Analyst & Data Science Professional
+## Data Scientist & AI Specialist
 
 **Email:** EMAIL@ALLEN.TOOLS | **Phone:** 2096777869 | **Location:** Jacksonville | **Website:** HTTPS://ALLEN.TOOLS
 
@@ -12,79 +12,84 @@ title: Home
 
 ## Professional Summary
 
-Versatile Business Analyst with comprehensive expertise in data-driven decision support, specializing in advanced analytics and business intelligence solutions. Leveraging robust technical skills in Python, R, and SQL to develop sophisticated data pipelines and predictive models that transform complex business challenges into actionable insights. Proven track record of designing dynamic dashboards and conducting rigorous time series analysis to optimize organizational performance and drive strategic decision-making.
+Versatile Data Scientist and AI Specialist with extensive experience in architecting advanced analytics solutions and integrating Large Language Models (LLMs) into enterprise workflows. Proven track record of leveraging robust technical skills in Python, SQL, and Machine Learning to transform complex data environments into actionable strategic insights. Expert in prompt engineering and software engineering, dedicated to optimizing organizational performance through the deployment of scalable, automated intelligence systems.
 
 **Key Strengths:**
-- Advanced data mining and predictive analytics
-- Linux system administration
-- Scalable dashboard development
-- Performance optimization through data-driven insights
+- **Generative AI & LLMs**: Developing RAG pipelines and optimizing system prompts.
+- **Data Engineering**: Building distributed computing architectures on AWS and Azure.
+- **Predictive Analytics**: Implementing sophisticated regression and clustering models.
+- **Process Automation**: Streamlining business operations through custom software solutions.
 
 ---
 
 ## Technical Skills
 
-### **Programming Languages & Analytics**
-- **Languages**: Python (pandas, NumPy, scikit-learn), R, SQL (advanced query optimization)
-- **Statistical Modeling**: Time series analysis, predictive modeling, machine learning algorithms
-- **Data Mining**: Regression techniques, clustering, hypothesis testing
+### **Artificial Intelligence & Generative AI**
+- **Core Competencies**: Prompt Engineering, RAG (Retrieval-Augmented Generation), Fine-tuning, Chain-of-Thought Reasoning
+- **Frameworks & Tools**: LangChain, OpenAI API, Hugging Face, Gemini API
+- **Application**: Automated Agents, Context Management, LLM Evaluation
 
-### **Database & Data Management**
-- **Databases**: PostgreSQL, MySQL, SQLite
-- **Data Warehousing**: ETL/ELT processes, dimensional modeling
-- **Big Data Technologies**: Apache Spark, Hadoop ecosystem
+### **Data Science & Advanced Analytics**
+- **Languages**: Python (Advanced), R, SQL, JavaScript
+- **Libraries**: pandas, NumPy, scikit-learn, TensorFlow, Keras
+- **Modeling**: Time Series Analysis, Multivariate Regression, Classification/Clustering, Hypothesis Testing
 
-### **Data Visualization & Business Intelligence**
-- **Tools**: Tableau, Power BI, Looker
-- **Dashboard Development**: Interactive reporting, executive-level data storytelling
-- **Visualization Libraries**: Matplotlib, ggplot2, Seaborn
+### **Software Engineering & Infrastructure**
+- **Engineering**: API Usage, RESTful Architectures, Git/Version Control, CI/CD Concepts
+- **Data Infrastructure**: ETL/ELT Pipeline Design, Data Warehousing, Dimensional Modeling
+- **Cloud Platforms**: AWS (EC2, S3), Microsoft Azure, Google Cloud Platform (GCP)
+- **System Admin**: Linux/Unix Administration, Bash Scripting, Docker
 
-### **Cloud & System Technologies**
-- **Cloud Platforms**: AWS (EC2, S3), Azure Machine Learning
-- **System Administration**: Linux environment, bash scripting
-- **Version Control**: Git, GitHub, GitLab
-
-### **Advanced Analytics Capabilities**
-- **Machine Learning**: Supervised/unsupervised learning techniques
-- **Predictive Analytics**: Regression, classification, clustering models
-- **Business Intelligence**: KPI development, performance metrics analysis
+### **Business Intelligence & Visualization**
+- **Tools**: Tableau, Power BI, Excel (Advanced), Looker
+- **Visualization**: Matplotlib, Seaborn, ggplot2, Interactive Dashboards
+- **Reporting**: Automated Reporting Frameworks, Executive-Level Data Storytelling
 
 ---
 
 ## Professional Experience
 
-### **Senior Data Analyst** | TechInnovate Solutions | Remote | Jan 2021 - Present
-- **Business Intelligence**: Architected comprehensive business intelligence dashboards using Python and Tableau, enabling real-time performance tracking and reducing reporting cycle time by 40%
-- **Predictive Modeling**: Developed predictive time series models leveraging advanced statistical techniques in R, forecasting key business metrics with 85% accuracy
-- **Data Pipeline Optimization**: Optimized ETL pipelines using SQL and Linux scripting, improving data processing efficiency and reducing computational overhead by 35%
-- **Machine Learning**: Collaborated cross-functionally to design machine learning models that transformed raw customer interaction data into actionable strategic insights
+### **Business Owner & Consultant** | Allen.Tools | Tampa & Jacksonville, FL | 2002 - Present
+**Data Scientist (2015 - Present)**
+- **Advanced Analytics Solutions**: Partner with corporate clients to deliver bespoke data science solutions, utilizing **scikit-learn** and **TensorFlow** to build predictive models that drive strategic decision-making.
+- **Cloud Architecture**: Architect and deploy distributed computing pipelines across **AWS, GCP, and Azure**, ensuring scalable and robust data processing capabilities for high-volume datasets.
+- **Machine Learning**: Develop an deploy custom machine learning algorithms for classification and regression tasks, directly translating raw data into competitive advantages for clients.
 
-### **Business Intelligence Analyst** | DataDriven Consulting | Hybrid | Jun 2019 - Dec 2020
-- **Data Visualization**: Implemented advanced data visualization strategies using Power BI, translating complex analytical findings into intuitive executive dashboards
-- **Statistical Analysis**: Conducted rigorous statistical analysis on customer segmentation, utilizing multivariate regression and clustering algorithms to identify high-value market opportunities
-- **Automated Reporting**: Engineered automated reporting frameworks in Python, standardizing KPI tracking and enabling data-driven decision-making across multiple business units
-- **Cost Optimization**: Reduced operational costs by 25% through targeted predictive analytics and strategic recommendation implementations
+**IT Consultant (2006 - Present)**
+- **Infrastructure Management**: Lead the end-to-end implementation of hardware maintenance, system upgrades, and network security for small-to-medium businesses.
+- **Systems Architecture**: Design and maintain complex enterprise-grade system architectures, including UNIX firewall configurations and routing optimization, ensuring 99.9% system uptime.
 
-### **Data Analysis Specialist** | Analytics Frontier | Remote | Aug 2017 - May 2019
-- **Data Warehousing**: Deployed scalable data warehousing solutions using cloud platforms, centralizing disparate data sources and enhancing organizational data accessibility
-- **Machine Learning**: Developed machine learning classification models to predict customer churn, achieving 78% predictive accuracy and informing retention strategies
-- **Market Analysis**: Conducted comprehensive statistical analysis using R and Python, providing deep insights into market trends and competitive landscapes
-- **Database Management**: Designed and maintained complex SQL databases, ensuring data integrity and optimizing query performance for enterprise-level analytics
+### **Junior Data Analyst** | Kemper | Jacksonville, FL | 2023
+- **Data Integrity & Security**: Architected automated PII (Personally Identifiable Information) detection workflows, writing complex regular expressions to identify sensitive data patterns across **Oracle, MSSQL, Postgres, and Snowflake** environments.
+- **Automated Reporting**: Leveraged **Informatica** to orchestrate seamless scanning pipelines, significantly reducing manual auditing time and ensuring compliance with data privacy regulations.
+- **Data Curation**: Curated and validated comprehensive datasets of matching queries using Excel, providing leadership with critical insights for risk mitigation.
+
+### **IT Intern** | Mercedes-Benz | Jacksonville, FL | 2021
+- **Process Automation**: Engineered robust automation scripts using **Java and Selenium** to streamline website workflows, reducing manual data entry efforts and eliminating human error.
+- **Operational Reporting**: Collaborated with cross-functional teams to generate complex parts reports in **Excel and Access**, optimizing inventory management processes.
+- **Data Optimization**: Developed tools to update parts routing rules, directly contributing to the efficiency of the logistics supply chain.
+
+### **Data Scientist (Contract)** | Florida Blue | Jacksonville, FL | 2019
+- **NLP Research & Implementation**: Led research initiatives on **Natural Language Processing (NLP)** for contact center optimization, creating frameworks for click-stream analysis that improved customer advocate workflows.
+- **Data Engineering**: Designed and implemented software engineering solutions using **Python**, ensuring the reliability and scalability of internal data tools.
+- **Exploratory Data Analysis**: Conducted rigorous data exploration within **SQL and MongoDB** environments to quantify database structures and identify opportunities for optimization.
+
+### **Systems Administrator** | BestBuy | 2014 - 2015
+- **Automation Strategy**: Developed and executed mid-to-long term automation strategies to enhance infrastructure reliability and performance for diverse client industries including non-profits and manufacturing.
+- **Database Administration**: Installed, configured, and maintained complex database systems, ensuring data integrity and accessibility.
 
 ---
 
 ## Education & Professional Development
 
-### **Master of Business Analytics** | Jacksonville University | 2019 - 2023
-- **Key Focus Areas**: Data Mining, Time Series Analysis & Forecasting, Predictive Analytics
-- **Capstone Project**: Linear Regression Analysis for Business Applications
-- **Advanced Statistical Modeling**: Applied business analytics and predictive modeling techniques
+### **Master of Applied Business Analytics** | Jacksonville University | 2022
+- **Key Focus Areas**: Machine Learning, Deep Learning, Natural Language Processing (NLP), Linear Regression, Clustering
+- **Advanced Modeling**: Applied sophisticated statistical techniques to solve real-world business problems.
 
-### **Bachelor of Science in Information Studies** | Data Science Concentration | University of South Florida | May 2020
-- **Minor**: Business Intelligence
-- **Key Coursework**: Database Systems, Programming for Data Analysis, Statistical Computing, Data Mining, Business Communication
-- **Notable Project**: Designed a comprehensive data pipeline for analyzing customer behavior patterns, utilizing SQL, Python, and advanced data visualization techniques to extract actionable business insights
-
+### **Bachelor of Science in Information Studies** | University of South Florida | 2018
+- **Concentration**: Data Science & Analytics
+- **Recognition**: Dean’s List of Scholars, Bernard Oscher Lifelong Learning Scholarship Recipient
+- **Notable Project**: Designed comprehensive data pipelines and visualization systems to analyze complex behavior patterns.
 ---
 
 ## Recent Projects
