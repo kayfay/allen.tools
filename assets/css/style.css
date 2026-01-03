@@ -181,6 +181,14 @@ p {
 .project-card h3 {
     margin-top: 0;
     color: var(--secondary-color);
+    font-size: 1.25rem;
+    /* Reduced from default h3 size */
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    /* Slightly reduced text size */
+    margin-bottom: 1rem;
 }
 
 /* Contact Form */

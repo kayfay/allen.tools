@@ -42,7 +42,7 @@ Versatile Data Scientist and AI Specialist with extensive experience in architec
 ## Technical Skills
 
 ### **Artificial Intelligence & Generative AI**
-- **Core Competencies**: Prompt Engineering, RAG (Retrieval-Augmented Generation), Fine-tuning, Chain-of-Thought Reasoning
+- **Core Competencies**: Prompt Engineering, Fine-tuning, Chain-of-Thought Reasoning
 - **Frameworks & Tools**: LangChain, OpenAI API, Hugging Face, Gemini API
 - **Application**: Automated Agents, Context Management, LLM Evaluation
 
@@ -58,7 +58,7 @@ Versatile Data Scientist and AI Specialist with extensive experience in architec
 - **System Admin**: Linux/Unix Administration, Bash Scripting, Docker
 
 ### **Business Intelligence & Visualization**
-- **Tools**: Tableau, Power BI, Excel (Advanced), Looker
+- **Tools**: Tableau, Excel (Advanced), Looker
 - **Visualization**: Matplotlib, Seaborn, ggplot2, Interactive Dashboards
 - **Reporting**: Automated Reporting Frameworks, Executive-Level Data Storytelling
 
