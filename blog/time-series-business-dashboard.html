@@ -1,411 +1,155 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Time Series Analysis for Restaurant Sales Forecasting - Allen.Tools Blog</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Blog post specific styles that extend the main site design */
-        .blog-post-header {
-            background: white;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .blog-post-header h1 {
-            color: var(--primary-color);
-            margin: 0 0 1rem 0;
-            font-size: 2.5rem;
-            line-height: 1.2;
-        }
-        
-        .blog-post-meta {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-            border-left: 4px solid var(--secondary-color);
-        }
-        
-        .blog-post-meta-content {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .blog-post-date {
-            color: #666;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .category-tag {
-            background: var(--secondary-color);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        .blog-post-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            line-height: 1.8;
-            color: var(--text-color);
-        }
-        
-        .blog-post-content h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            margin: 2rem 0 1rem 0;
-            font-size: 1.8rem;
-        }
-        
-        .blog-post-content h3 {
-            color: var(--primary-color);
-            margin: 1.5rem 0 1rem 0;
-            font-size: 1.4rem;
-        }
-        
-        .blog-post-content h4 {
-            color: var(--primary-color);
-            margin: 1rem 0 0.5rem 0;
-            font-size: 1.2rem;
-        }
-        
-        .blog-post-content ul, 
-        .blog-post-content ol {
-            margin: 1rem 0;
-            padding-left: 2rem;
-        }
-        
-        .blog-post-content li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .blog-post-content p {
-            margin-bottom: 1rem;
-        }
-        
-        .blog-post-content strong {
-            color: var(--primary-color);
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
-            border-left: 4px solid var(--secondary-color);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .highlight-box h4 {
-            color: var(--primary-color);
-            margin: 0 0 1rem 0;
-        }
-        
-        .dashboard-link {
-            text-align: center;
-            margin: 2rem 0;
-        }
-        
-        .dashboard-link .btn {
-            background: white;
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border: 2px solid var(--secondary-color);
-        }
-        
-        .dashboard-link .btn:hover {
-            background: var(--secondary-color);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        
-        .back-link {
-            margin-bottom: 1rem;
-        }
-        
-        .back-link a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.3s ease;
-        }
-        
-        .back-link a:hover {
-            color: var(--primary-color);
-        }
-        
-        .blog-nav {
-            background: white;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-        
-        .blog-nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .blog-nav-brand a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .blog-nav-links {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            gap: 2rem;
-        }
-        
-        .blog-nav-links a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .blog-nav-links a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .blog-post-content blockquote {
-            background: #f8f9fa;
-            border-left: 4px solid var(--secondary-color);
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-            color: #666;
-        }
-        
-        .blog-post-content hr {
-            border: none;
-            border-top: 2px solid #eee;
-            margin: 2rem 0;
-        }
-        
-        @media (max-width: 768px) {
-            .blog-nav-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .blog-nav-links {
-                gap: 1rem;
-            }
-            
-            .blog-post-header h1 {
-                font-size: 2rem;
-            }
-            
-            .blog-post-meta-content {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-            
-            .blog-post-content {
-                padding: 1.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Blog Navigation -->
-    <nav class="blog-nav">
-        <div class="blog-nav-content">
-            <div class="blog-nav-brand">
-                <a href="/">Allen.Tools</a>
-            </div>
-            <ul class="blog-nav-links">
-                <li><a href="/">home</a></li>
-                <li><a href="/blog">portfolio</a></li>
-                <li><a href="/contact">contact</a></li>
-            </ul>
+---
+layout: default
+title: Advanced Time Series Analysis for Restaurant Sales Forecasting
+---
+
+<!-- Blog Post Header -->
+<div class="blog-post-header">
+    <div class="back-link">
+        <a href="{{ '/blog' | relative_url }}"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    </div>
+    <h1><i class="fas fa-chart-line"></i> Advanced Time Series Analysis for Restaurant Sales Forecasting</h1>
+</div>
+
+<!-- Blog Post Meta -->
+<div class="blog-post-meta">
+    <div class="blog-post-meta-content">
+        <div class="blog-post-date">
+            <i class="fas fa-calendar"></i> January 15, 2024
         </div>
-    </nav>
+        <span class="category-tag">Data Science</span>
+        <span class="category-tag">Business Intelligence</span>
+        <span class="category-tag">Time Series Analysis</span>
+    </div>
+</div>
 
-    <main>
-        <!-- Blog Post Header -->
-        <div class="blog-post-header">
-            <div class="back-link">
-                <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Blog</a>
-            </div>
-            <h1><i class="fas fa-chart-line"></i> Advanced Time Series Analysis for Restaurant Sales Forecasting</h1>
-        </div>
+<!-- Blog Post Content -->
+<div class="blog-post-content">
+    <p><em>Published on January 15, 2024</em></p>
 
-        <!-- Blog Post Meta -->
-        <div class="blog-post-meta">
-            <div class="blog-post-meta-content">
-                <div class="blog-post-date">
-                    <i class="fas fa-calendar"></i> January 15, 2024
-                </div>
-                <span class="category-tag">Data Science</span>
-                <span class="category-tag">Business Intelligence</span>
-                <span class="category-tag">Time Series Analysis</span>
-            </div>
-        </div>
+    <h2>Overview</h2>
+    <p>I recently developed an advanced business intelligence dashboard for restaurant sales forecasting and strategic
+        decision making. This comprehensive analysis demonstrates the power of time series decomposition in
+        understanding complex business patterns and driving data-informed decisions.</p>
 
-        <!-- Blog Post Content -->
-        <div class="blog-post-content">
-            <p><em>Published on January 15, 2024</em></p>
+    <h2>Key Business Metrics</h2>
+    <p>The analysis reveals several critical insights about the restaurant's performance:</p>
+    <ul>
+        <li><strong>Weekly Growth</strong>: $178 average weekly growth</li>
+        <li><strong>Seasonal Strength</strong>: 66.5% of variance explained by seasonal patterns</li>
+        <li><strong>Peak Weeks</strong>: 11 peak weeks per year requiring strategic preparation</li>
+        <li><strong>Volatility</strong>: 16.3% manageable volatility level</li>
+        <li><strong>Forecast Horizon</strong>: Reliable 12-week forecasting capability</li>
+    </ul>
 
-            <h2>Overview</h2>
-            <p>I recently developed an advanced business intelligence dashboard for restaurant sales forecasting and strategic decision making. This comprehensive analysis demonstrates the power of time series decomposition in understanding complex business patterns and driving data-informed decisions.</p>
+    <h2>Core Time Series Analysis</h2>
+    <h3>Complete Sales Journey Analysis</h3>
+    <p>The sophisticated time series decomposition breaks down sales performance into three fundamental components:</p>
+    <ol>
+        <li><strong>Original Sales</strong> (Blue dashed line): Actual sales evolution from $40,000 to $57,000 per week
+        </li>
+        <li><strong>Growth Trend</strong> (Green solid line): Underlying growth trend of $8,500 per year</li>
+        <li><strong>Seasonal Patterns</strong> (Red solid line): Pure seasonal patterns after removing growth bias, with
+            ±$10,000 amplitude</li>
+    </ol>
+    <p>This analysis reveals that growth trend dominates sales performance (85% contribution) while seasonal patterns
+        remain consistent and predictable (15% contribution).</p>
 
-            <h2>Key Business Metrics</h2>
-            <p>The analysis reveals several critical insights about the restaurant's performance:</p>
-            <ul>
-                <li><strong>Weekly Growth</strong>: $178 average weekly growth</li>
-                <li><strong>Seasonal Strength</strong>: 66.5% of variance explained by seasonal patterns</li>
-                <li><strong>Peak Weeks</strong>: 11 peak weeks per year requiring strategic preparation</li>
-                <li><strong>Volatility</strong>: 16.3% manageable volatility level</li>
-                <li><strong>Forecast Horizon</strong>: Reliable 12-week forecasting capability</li>
-            </ul>
+    <h3>Statistical Components Breakdown</h3>
+    <ul>
+        <li><strong>Trend Component</strong>: 85% contribution - Strong, consistent growth trajectory</li>
+        <li><strong>Seasonal Component</strong>: 15% contribution - Predictable seasonal variations</li>
+        <li><strong>Residual Component</strong>: &lt;5% contribution - Minimal noise, excellent model fit</li>
+        <li><strong>Model Quality</strong>: R² &gt; 0.95, indicating excellent statistical fit</li>
+    </ul>
 
-            <h2>Core Time Series Analysis</h2>
-            <h3>Complete Sales Journey Analysis</h3>
-            <p>The sophisticated time series decomposition breaks down sales performance into three fundamental components:</p>
-            <ol>
-                <li><strong>Original Sales</strong> (Blue dashed line): Actual sales evolution from $40,000 to $57,000 per week</li>
-                <li><strong>Growth Trend</strong> (Green solid line): Underlying growth trend of $8,500 per year</li>
-                <li><strong>Seasonal Patterns</strong> (Red solid line): Pure seasonal patterns after removing growth bias, with ±$10,000 amplitude</li>
-            </ol>
-            <p>This analysis reveals that growth trend dominates sales performance (85% contribution) while seasonal patterns remain consistent and predictable (15% contribution).</p>
+    <h2>Interactive Time Series Charts</h2>
+    <p>The dashboard includes interactive visualization capabilities:</p>
+    <ul>
+        <li><strong>Zoom and Pan</strong>: Explore specific time periods in detail</li>
+        <li><strong>Hover Information</strong>: See exact values and dates on hover</li>
+        <li><strong>Multiple Chart Types</strong>: Time series, decomposition, seasonal patterns, and heatmap views</li>
+        <li><strong>Export Functionality</strong>: Download charts and data for further analysis</li>
+    </ul>
 
-            <h3>Statistical Components Breakdown</h3>
-            <ul>
-                <li><strong>Trend Component</strong>: 85% contribution - Strong, consistent growth trajectory</li>
-                <li><strong>Seasonal Component</strong>: 15% contribution - Predictable seasonal variations</li>
-                <li><strong>Residual Component</strong>: &lt;5% contribution - Minimal noise, excellent model fit</li>
-                <li><strong>Model Quality</strong>: R² &gt; 0.95, indicating excellent statistical fit</li>
-            </ul>
+    <h2>Pattern Recognition & Analysis</h2>
+    <h3>Detrended Sales Intensity Heatmap</h3>
+    <p>The advanced heatmap reveals true seasonal patterns after removing growth bias:</p>
 
-            <h2>Interactive Time Series Charts</h2>
-            <p>The dashboard includes interactive visualization capabilities:</p>
-            <ul>
-                <li><strong>Zoom and Pan</strong>: Explore specific time periods in detail</li>
-                <li><strong>Hover Information</strong>: See exact values and dates on hover</li>
-                <li><strong>Multiple Chart Types</strong>: Time series, decomposition, seasonal patterns, and heatmap views</li>
-                <li><strong>Export Functionality</strong>: Download charts and data for further analysis</li>
-            </ul>
+    <div class="highlight-box">
+        <h4>Peak Seasons:</h4>
+        <ul>
+            <li><strong>October-November</strong>: Darkest blue intensity (highest sales)</li>
+            <li><strong>April-May</strong>: Medium-dark blue intensity (secondary peaks)</li>
+        </ul>
 
-            <h2>Pattern Recognition & Analysis</h2>
-            <h3>Detrended Sales Intensity Heatmap</h3>
-            <p>The advanced heatmap reveals true seasonal patterns after removing growth bias:</p>
-            
-            <div class="highlight-box">
-                <h4>Peak Seasons:</h4>
-                <ul>
-                    <li><strong>October-November</strong>: Darkest blue intensity (highest sales)</li>
-                    <li><strong>April-May</strong>: Medium-dark blue intensity (secondary peaks)</li>
-                </ul>
-                
-                <h4>Trough Seasons:</h4>
-                <ul>
-                    <li><strong>January-February</strong>: Lightest blue intensity (lowest sales)</li>
-                    <li><strong>July-August</strong>: Light-medium blue intensity (secondary troughs)</li>
-                </ul>
-            </div>
+        <h4>Trough Seasons:</h4>
+        <ul>
+            <li><strong>January-February</strong>: Lightest blue intensity (lowest sales)</li>
+            <li><strong>July-August</strong>: Light-medium blue intensity (secondary troughs)</li>
+        </ul>
+    </div>
 
-            <h3>Strategic Planning Insights</h3>
-            <ul>
-                <li><strong>Peak Preparation</strong>: 3-week advance notice required for peak seasons</li>
-                <li><strong>Resource Planning</strong>: 25-30% staffing increase needed during peak weeks</li>
-                <li><strong>Marketing Calendar</strong>: Schedule campaigns for pre-peak periods</li>
-                <li><strong>Inventory Management</strong>: Stock up 20-25% during peak seasons</li>
-            </ul>
+    <h3>Strategic Planning Insights</h3>
+    <ul>
+        <li><strong>Peak Preparation</strong>: 3-week advance notice required for peak seasons</li>
+        <li><strong>Resource Planning</strong>: 25-30% staffing increase needed during peak weeks</li>
+        <li><strong>Marketing Calendar</strong>: Schedule campaigns for pre-peak periods</li>
+        <li><strong>Inventory Management</strong>: Stock up 20-25% during peak seasons</li>
+    </ul>
 
-            <h2>Business Intelligence Summary</h2>
-            <h3>Strategic Business Insights</h3>
-            <ol>
-                <li><strong>Investment Confidence</strong>: Growth is statistically significant and sustainable</li>
-                <li><strong>Seasonal Marketing</strong>: 66.5% seasonal strength enables targeted marketing campaigns</li>
-                <li><strong>Resource Planning</strong>: 11 peak weeks require strategic resource allocation</li>
-                <li><strong>Cash Flow Management</strong>: $48,673 average weekly sales with predictable patterns</li>
-            </ol>
+    <h2>Business Intelligence Summary</h2>
+    <h3>Strategic Business Insights</h3>
+    <ol>
+        <li><strong>Investment Confidence</strong>: Growth is statistically significant and sustainable</li>
+        <li><strong>Seasonal Marketing</strong>: 66.5% seasonal strength enables targeted marketing campaigns</li>
+        <li><strong>Resource Planning</strong>: 11 peak weeks require strategic resource allocation</li>
+        <li><strong>Cash Flow Management</strong>: $48,673 average weekly sales with predictable patterns</li>
+    </ol>
 
-            <h3>Immediate Action Items</h3>
-            <ul>
-                <li><strong>Peak Week Preparation</strong>: Start planning 3 weeks before peaks</li>
-                <li><strong>Seasonal Menu Planning</strong>: Develop seasonal specials for peak periods</li>
-                <li><strong>Marketing Calendar</strong>: Schedule campaigns for pre-peak periods</li>
-                <li><strong>Inventory Management</strong>: Stock up 20-25% during peak seasons</li>
-            </ul>
+    <h3>Immediate Action Items</h3>
+    <ul>
+        <li><strong>Peak Week Preparation</strong>: Start planning 3 weeks before peaks</li>
+        <li><strong>Seasonal Menu Planning</strong>: Develop seasonal specials for peak periods</li>
+        <li><strong>Marketing Calendar</strong>: Schedule campaigns for pre-peak periods</li>
+        <li><strong>Inventory Management</strong>: Stock up 20-25% during peak seasons</li>
+    </ul>
 
-            <h2>Technical Implementation</h2>
-            <p>This analysis was built using advanced time series decomposition techniques, including:</p>
-            <ul>
-                <li><strong>STL Decomposition</strong>: Seasonal and Trend decomposition using Loess</li>
-                <li><strong>Statistical Modeling</strong>: Robust trend and seasonal component extraction</li>
-                <li><strong>Interactive Visualization</strong>: Modern web technologies for dynamic charting</li>
-                <li><strong>Business Intelligence</strong>: Actionable insights derived from statistical analysis</li>
-            </ul>
+    <h2>Technical Implementation</h2>
+    <p>This analysis was built using advanced time series decomposition techniques, including:</p>
+    <ul>
+        <li><strong>STL Decomposition</strong>: Seasonal and Trend decomposition using Loess</li>
+        <li><strong>Statistical Modeling</strong>: Robust trend and seasonal component extraction</li>
+        <li><strong>Interactive Visualization</strong>: Modern web technologies for dynamic charting</li>
+        <li><strong>Business Intelligence</strong>: Actionable insights derived from statistical analysis</li>
+    </ul>
 
-            <h2>Live Dashboard</h2>
-            <p>You can explore the interactive dashboard at: <strong><a href="https://upsidetimeseries.allen.tools" target="_blank" rel="noopener noreferrer">upsidetimeseries.allen.tools</a></strong></p>
-            <p>The dashboard provides real-time access to all analysis components, interactive charts, and downloadable reports for strategic planning.</p>
+    <h2>Live Dashboard</h2>
+    <p>You can explore the interactive dashboard at: <strong><a href="https://upsidetimeseries.allen.tools"
+                target="_blank" rel="noopener noreferrer">upsidetimeseries.allen.tools</a></strong></p>
+    <p>The dashboard provides real-time access to all analysis components, interactive charts, and downloadable reports
+        for strategic planning.</p>
 
-            <div class="dashboard-link">
-                <a href="https://upsidetimeseries.allen.tools" class="btn" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-chart-line"></i> Explore the Interactive Dashboard
-                </a>
-            </div>
+    <div class="dashboard-link">
+        <a href="https://upsidetimeseries.allen.tools" class="btn" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-chart-line"></i> Explore the Interactive Dashboard
+        </a>
+    </div>
 
-            <h2>Conclusion</h2>
-            <p>This time series analysis demonstrates how advanced statistical techniques can transform raw business data into actionable strategic insights. The combination of trend analysis, seasonal decomposition, and interactive visualization creates a powerful tool for data-driven decision making in the restaurant industry.</p>
-            <p>The analysis shows that while the business has strong growth fundamentals, understanding and leveraging seasonal patterns is crucial for optimizing operations, staffing, and marketing efforts. The 12-week forecasting capability provides a strategic planning window that enables proactive rather than reactive business decisions.</p>
+    <h2>Conclusion</h2>
+    <p>This time series analysis demonstrates how advanced statistical techniques can transform raw business data into
+        actionable strategic insights. The combination of trend analysis, seasonal decomposition, and interactive
+        visualization creates a powerful tool for data-driven decision making in the restaurant industry.</p>
+    <p>The analysis shows that while the business has strong growth fundamentals, understanding and leveraging seasonal
+        patterns is crucial for optimizing operations, staffing, and marketing efforts. The 12-week forecasting
+        capability provides a strategic planning window that enables proactive rather than reactive business decisions.
+    </p>
 
-            <hr>
-            <blockquote>
-                <p><em>This analysis represents a comprehensive approach to business intelligence, combining statistical rigor with practical business applications. The interactive dashboard makes complex time series analysis accessible to business stakeholders while providing the depth needed for strategic decision making.</em></p>
-            </blockquote>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://linkedin.com/in/allentools" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/kayfay" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-            <p>&copy; 2024 Allen.Tools. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+    <hr>
+    <blockquote>
+        <p><em>This analysis represents a comprehensive approach to business intelligence, combining statistical rigor
+                with practical business applications. The interactive dashboard makes complex time series analysis
+                accessible to business stakeholders while providing the depth needed for strategic decision making.</em>
+        </p>
+    </blockquote>
+</div>

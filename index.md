@@ -6,7 +6,24 @@ title: Home
 # Allen Christopher Tools
 ## Data Scientist & AI Specialist
 
-**Email:** EMAIL@ALLEN.TOOLS | **Phone:** 2096777869 | **Location:** Jacksonville | **Website:** HTTPS://ALLEN.TOOLS
+<div class="contact-header">
+    <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>email@allen.tools</span>
+    </div>
+    <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span>209-677-7869</span>
+    </div>
+    <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Jacksonville, FL</span>
+    </div>
+    <div class="contact-item">
+        <i class="fas fa-globe"></i>
+        <span>allen.tools</span>
+    </div>
+</div>
 
 ---
 
