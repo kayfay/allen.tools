@@ -572,6 +572,10 @@ iframe {
 .coming-soon h4,
 .coming-soon p,
 .coming-soon ul,
+.coming-soon li {
+    color: white;
+}
+
 /* Blog Post Specific Styles */
 .blog-post-header {
     background: white;
