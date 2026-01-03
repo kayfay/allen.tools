@@ -560,8 +560,13 @@ iframe {
     background: linear-gradient(135deg, var(--secondary-color), #2980b9);
     color: white;
     border-left: none !important;
-    padding-left: 2.5rem;
-    /* Increase padding to prevent bullet overlap */
+    padding-left: 2rem;
+}
+
+.coming-soon ul {
+    list-style-position: inside;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .coming-soon h4,
