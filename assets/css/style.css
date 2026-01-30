@@ -260,6 +260,15 @@ footer {
 }
 
 
+/* Utilities */
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1.5rem;
+}
+
 /* Buttons */
 .btn {
     display: inline-block;
@@ -747,6 +756,15 @@ iframe {
 
     .blog-post-content {
         padding: 1.5rem;
+    }
+
+    .blog-card {
+        padding: 1.5rem;
+    }
+
+    .blog-image {
+        max-width: 100%;
+        margin: 1.5rem 0;
     }
 }
 
