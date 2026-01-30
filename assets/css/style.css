@@ -749,3 +749,25 @@ iframe {
         padding: 1.5rem;
     }
 }
+
+/* Blog Image Styles */
+.blog-image {
+    max-width: 80%;
+    margin: 2rem auto;
+    display: block;
+}
+
+.blog-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.image-caption {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
