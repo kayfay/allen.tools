@@ -128,7 +128,7 @@ A comprehensive business intelligence solution demonstrating advanced statistica
 - Improved forecasting accuracy for business planning
 - Streamlined reporting and analysis processes
 
-**[Explore the Dashboard](https://upsidetimeseries.allen.tools)** | **[Read the Technical Analysis](https://upsidetimeseries.allen.tools)** | **[View Portfolio](/blog)**
+**[Explore the Dashboard](https://upsidetimeseries.allen.tools)** | **[Read the Technical Analysis](https://upsidetimeseries.allen.tools)**
 
 ---
 
@@ -158,4 +158,4 @@ A comprehensive business intelligence solution demonstrating advanced statistica
 
 Ready to transform your data into actionable business insights? Let's discuss how advanced analytics and business intelligence can drive your organization's success.
 
-**[Schedule a Consultation](/contact)** | **[View Portfolio](/blog)** | **[Connect on LinkedIn](https://linkedin.com/in/allentools)**
+**[Schedule a Consultation](/contact)** | **[Connect on LinkedIn](https://linkedin.com/in/allentools)**
