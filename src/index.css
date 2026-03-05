@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAFAFA;
+  --primary: #334155;
+  --secondary: #475569;
+  --border: #E2E8F0;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-border: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  color: #334155;
+}
+
+/* Explicit fix for Primary Buttons */
+.bg-primary {
+  background-color: var(--primary) !important;
+  color: white !important;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}

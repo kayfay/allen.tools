@@ -128,8 +128,6 @@ A comprehensive business intelligence solution demonstrating advanced statistica
 - Improved forecasting accuracy for business planning
 - Streamlined reporting and analysis processes
 
-**[Explore the Dashboard](https://upsidetimeseries.allen.tools)** | **[Read the Technical Analysis](https://upsidetimeseries.allen.tools)**
-
 ---
 
 ## Professional Services

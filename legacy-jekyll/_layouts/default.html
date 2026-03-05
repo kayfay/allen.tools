@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - {{ site.title }}</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config & Design System Constraints -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#475569',   /* Slate 600 - Soft Primary */
+                        secondary: '#334155', /* Slate 700 - Soft Text */
+                        background: '#F8FAFC',/* Slate 50 - Cool Off-White */
+                        surface: '#FFFFFF',   /* Pure White */
+                        border: '#E2E8F0',    /* Slate 200 - Soft Borders */
+                    },
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Soft Elegant Global Styles -->
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-background text-secondary font-sans leading-relaxed antialiased selection:bg-border selection:text-secondary;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @apply font-semibold text-secondary tracking-tight;
+            }
+            h1 {
+                @apply text-4xl md:text-5xl lg:text-6xl mb-6 pb-4 border-b border-border;
+            }
+            main h1:first-child {
+                @apply mt-0;
+            }
+            h2 {
+                @apply text-2xl md:text-3xl mb-4 mt-12 pb-2 border-b border-border text-primary;
+            }
+            main h2:first-child {
+                @apply mt-0;
+            }
+            h3 {
+                @apply text-xl md:text-2xl mb-3 mt-8 text-secondary;
+            }
+            p {
+                @apply mb-6 text-base md:text-lg leading-relaxed max-w-4xl text-slate-600;
+            }
+            a {
+                @apply text-primary font-medium underline decoration-2 decoration-border underline-offset-4 hover:decoration-primary transition-colors duration-200 outline-none focus:ring-2 focus:ring-border rounded-sm;
+            }
+            hr {
+                @apply border-t border-border my-12;
+            }
+            /* Scope list styles to main content to avoid breaking Nav */
+            main ul {
+                @apply mb-8 list-none pl-0 flex flex-col gap-3;
+            }
+            main li {
+                @apply relative pl-6 text-base md:text-lg text-slate-600;
+            }
+            main li::before {
+                content: "";
+                @apply absolute left-0 top-[0.6em] w-2 h-2 rounded-full bg-border inline-block;
+            }
+            strong {
+                @apply font-semibold text-secondary;
+            }
+            .contact-header {
+                @apply flex flex-col sm:flex-row flex-wrap gap-6 p-6 mb-12 bg-surface rounded-xl border border-border shadow-sm;
+            }
+            .contact-item {
+                @apply flex items-center gap-3 text-sm md:text-base font-medium text-slate-600;
+            }
+            .contact-item i {
+                @apply text-primary text-lg w-5 text-center;
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col md:flex-row bg-background">
+
+    <!-- Sidebar / Top Nav -->
+    <header
+        class="md:w-72 lg:w-80 border-b md:border-b-0 md:border-r border-border p-8 md:p-10 flex flex-col bg-surface relative z-10 shrink-0 shadow-sm md:shadow-none">
+
+        <!-- Logo -->
+        <div class="font-semibold tracking-tight leading-tight mb-12">
+            <a href="{{ '/' | relative_url }}"
+                class="text-2xl md:text-3xl lg:text-4xl no-underline text-secondary hover:text-primary transition-colors block pb-4 border-b border-border">
+                {{ site.title | default: "ALLEN" }}
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex-grow">
+            <ul class="flex flex-col gap-2 m-0 p-0 list-none text-sm font-medium tracking-wide uppercase">
+                <li>
+                    <a href="{{ '/' | relative_url }}"
+                        class="no-underline text-slate-500 hover:text-primary hover:bg-slate-50 block py-3 px-4 rounded-lg transition-colors border-none before:hidden">Home</a>
+                </li>
+                <li>
+                    <a href="{{ '/contact' | relative_url }}"
+                        class="no-underline text-slate-500 hover:text-primary hover:bg-slate-50 block py-3 px-4 rounded-lg transition-colors border-none before:hidden">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="mt-12 pt-8 border-t border-border flex gap-6 text-2xl">
+            <a href="https://linkedin.com/in/allentools" target="_blank" rel="noopener noreferrer"
+                class="no-underline text-slate-400 hover:text-primary transition-colors">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/kayfay" target="_blank" rel="noopener noreferrer"
+                class="no-underline text-slate-400 hover:text-primary transition-colors">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Content Area -->
+    <div class="flex-grow flex flex-col bg-background min-w-0">
+        <main class="flex-grow p-8 md:p-12 lg:p-16 w-full max-w-[900px] mx-auto overflow-x-hidden">
+            {{ content }}
+        </main>
+
+        <!-- Refined CTA -->
+        {% if page.url != '/contact' and page.url != '/contact/' and page.url != '/contact.html' %}
+        <div
+            class="w-full bg-surface border-t border-border py-16 px-8 text-center flex flex-col items-center justify-center">
+            <h2 class="text-3xl tracking-tight font-semibold text-secondary mb-2 mt-0 border-none pb-0">Ready to
+                transform your data?</h2>
+            <p class="text-slate-500 mb-8 max-w-lg">Let's discuss how advanced analytics and business intelligence can
+                drive your organization's success.</p>
+            <a href="{{ '/contact' | relative_url }}"
+                class="inline-block bg-primary text-white font-medium text-lg px-8 py-4 rounded-full shadow-sm hover:shadow-md hover:bg-secondary transition-all duration-300 no-underline">
+                Schedule A Consultation
+            </a>
+        </div>
+        {% endif %}
+
+        <footer
+            class="bg-surface border-t border-border p-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left text-sm text-slate-400">
+            <p class="mb-0 leading-none">&copy; {{ site.time | date: '%Y' }} {{ site.title | default: "ALLEN TOOLS" }}
+            </p>
+            <p class="mb-0 leading-none">System Design: Soft Minimal</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
