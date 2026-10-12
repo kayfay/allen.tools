@@ -1,14 +1,815 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio-new</title>
-    <script type="module" crossorigin src="/assets/index-D_yvA7xP.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DqFSq8eY.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Allen Christopher Tools — Systems, Operations & Agentic Engineering</title>
+  <meta name="description" content="Executive Field Dossier: Solving high-stakes operational problems where physical business and software collide.">
+  <link rel="icon" type="image/jpeg" href="me.jpg">
+
+  <!-- Google Fonts: Editorial Serif + Modern Clean Monospace & Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-paper: #FBF9F5;
+      --bg-rail: #F3EFE7;
+      --text-ink: #1B1A19;
+      --text-secondary: #5D5953;
+      --border-hairline: #DFD8CC;
+      --accent-rust: #943820;
+      --code-bg: #EAE5DB;
+      --sidebar-width: 290px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-paper);
+    }
+
+    body {
+      background-color: var(--bg-paper);
+      color: var(--text-ink);
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── Main Layout Container ── */
+    .dossier-wrapper {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+      display: grid;
+      grid-template-columns: var(--sidebar-width) 1fr;
+      column-gap: 4.5rem;
+      row-gap: 3rem;
+    }
+
+    /* ── Sticky Left Rail ── */
+    .sidebar {
+      position: sticky;
+      top: 3rem;
+      align-self: start;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      border-right: 1px solid var(--border-hairline);
+      padding-right: 2.5rem;
+    }
+
+    .brand-block {
+      margin-bottom: 2.2rem;
+    }
+
+    .avatar-wrapper {
+      width: 72px;
+      height: 72px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--border-hairline);
+      background-color: var(--bg-rail);
+    }
+
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .identity-name {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--text-ink);
+      margin-bottom: 0.3rem;
+    }
+
+    .identity-tagline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-rust);
+      line-height: 1.4;
+    }
+
+    .sidebar-nav {
+      margin: 2.2rem 0;
+      border-top: 1px solid var(--border-hairline);
+      padding-top: 1.5rem;
+    }
+
+    .sidebar-nav h4 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      margin-bottom: 0.9rem;
+    }
+
+    .sidebar-nav ul {
+      list-style: none;
+    }
+
+    .sidebar-nav li {
+      margin-bottom: 0.55rem;
+    }
+
+    .sidebar-nav a {
+      color: var(--text-ink);
+      text-decoration: none;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      transition: color 0.15s ease;
+      font-size: 0.85rem;
+    }
+
+    .sidebar-nav a span.nav-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent-rust);
+    }
+
+    .sidebar-nav a:hover {
+      color: var(--accent-rust);
+    }
+
+    .contact-block {
+      border-top: 1px solid var(--border-hairline);
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-block h4 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-links a {
+      display: block;
+      color: var(--text-ink);
+      text-decoration: none;
+      font-size: 0.82rem;
+      margin-bottom: 0.45rem;
+      border-bottom: 1px solid transparent;
+      width: fit-content;
+      transition: all 0.15s ease;
+    }
+
+    .contact-links a:hover {
+      color: var(--accent-rust);
+      border-bottom-color: var(--accent-rust);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      background: var(--bg-rail);
+      padding: 0.35rem 0.65rem;
+      border-radius: 3px;
+      border: 1px solid var(--border-hairline);
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #2E7D32;
+      display: inline-block;
+    }
+
+    /* ── Editorial Right Column ── */
+    .dossier-content {
+      max-width: 720px;
+    }
+
+    .chapter {
+      margin-bottom: 4.5rem;
+      padding-top: 1rem;
+    }
+
+    .chapter:not(:first-child) {
+      border-top: 1px solid var(--border-hairline);
+      padding-top: 3.5rem;
+    }
+
+    .chapter-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-rust);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    h2.chapter-title {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 2.15rem;
+      font-weight: 600;
+      line-height: 1.22;
+      letter-spacing: -0.025em;
+      color: var(--text-ink);
+      margin-bottom: 1.6rem;
+    }
+
+    h3.section-heading {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--text-ink);
+      margin: 2.2rem 0 0.8rem;
+    }
+
+    p {
+      margin-bottom: 1.4rem;
+      color: var(--text-ink);
+    }
+
+    p.lead-paragraph {
+      font-size: 1.22rem;
+      line-height: 1.65;
+      color: #111;
+      font-feature-settings: "liga" 1, "dlig" 1;
+    }
+
+    /* ── The Manifesto Pull Quote ── */
+    .thesis-quote {
+      margin: 2.2rem 0;
+      padding: 1.4rem 1.8rem;
+      background-color: var(--bg-rail);
+      border-left: 3px solid var(--accent-rust);
+      border-top: 1px solid var(--border-hairline);
+      border-right: 1px solid var(--border-hairline);
+      border-bottom: 1px solid var(--border-hairline);
+      font-size: 1.25rem;
+      line-height: 1.58;
+      font-style: italic;
+      color: var(--text-ink);
+    }
+
+    .thesis-quote cite {
+      display: block;
+      margin-top: 0.75rem;
+      font-style: normal;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+    }
+
+    /* ── Trajectory Ledger Items ── */
+    .trajectory-item {
+      padding: 1.6rem 0;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+
+    .trajectory-item:first-of-type {
+      border-top: 1px solid var(--border-hairline);
+    }
+
+    .trajectory-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.4rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .trajectory-role {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-ink);
+    }
+
+    .trajectory-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+
+    .trajectory-org {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent-rust);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.6rem;
+    }
+
+    .trajectory-desc {
+      font-size: 1.02rem;
+      line-height: 1.62;
+      color: var(--text-ink);
+      margin-bottom: 0;
+    }
+
+    /* ── Architecture Diagram Container ── */
+    .diagram-box {
+      margin: 2.2rem 0;
+      background: var(--bg-rail);
+      border: 1px solid var(--border-hairline);
+      padding: 1.5rem;
+      border-radius: 2px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .diagram-title {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-rust);
+      margin-bottom: 1rem;
+      display: block;
+      font-weight: 500;
+    }
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .flow-step {
+      background: #FFF;
+      border: 1px solid var(--border-hairline);
+      padding: 0.85rem;
+    }
+
+    .flow-step-num {
+      color: var(--accent-rust);
+      font-size: 0.7rem;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .flow-step-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--text-ink);
+    }
+
+    .flow-step-desc {
+      font-size: 0.74rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ── The Data Table (Anti-Card Ledger) ── */
+    .systems-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2.2rem 0;
+      font-size: 0.95rem;
+    }
+
+    .systems-table th {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--text-secondary);
+      border-bottom: 1.5px solid var(--text-ink);
+      padding: 0.7rem 0.8rem 0.7rem 0;
+      text-align: left;
+    }
+
+    .systems-table td {
+      border-bottom: 1px solid var(--border-hairline);
+      padding: 1rem 0.8rem 1rem 0;
+      vertical-align: top;
+      line-height: 1.55;
+    }
+
+    .systems-domain {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-ink);
+      white-space: nowrap;
+    }
+
+    .systems-stack {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent-rust);
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+    .systems-impact {
+      font-size: 0.95rem;
+      color: var(--text-ink);
+    }
+
+    /* ── Code / Monospace Inlines ── */
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.83em;
+      background: var(--code-bg);
+      padding: 0.15em 0.35em;
+      border-radius: 2px;
+      color: var(--text-ink);
+    }
+
+    /* ── Editorial Links ── */
+    a.editorial-link {
+      color: var(--accent-rust);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s ease;
+    }
+
+    a.editorial-link:hover {
+      color: var(--text-ink);
+    }
+
+    /* ── Footnote / Signoff ── */
+    .signoff-box {
+      background-color: var(--bg-rail);
+      border: 1px solid var(--border-hairline);
+      padding: 2.2rem;
+      margin-top: 2rem;
+    }
+
+    .signoff-box h3 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: var(--text-ink);
+    }
+
+    .signoff-actions {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.4rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-editorial {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.65rem 1.25rem;
+      background: var(--text-ink);
+      color: var(--bg-paper);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.15s ease;
+    }
+
+    .btn-editorial:hover {
+      background: var(--accent-rust);
+    }
+
+    .btn-editorial-secondary {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.65rem 1.25rem;
+      border: 1px solid var(--text-ink);
+      color: var(--text-ink);
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.15s ease;
+    }
+
+    .btn-editorial-secondary:hover {
+      border-color: var(--accent-rust);
+      color: var(--accent-rust);
+    }
+
+    /* ── Responsive Mobile Rules ── */
+    @media (max-width: 860px) {
+      .dossier-wrapper {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.25rem 4rem;
+        column-gap: 0;
+      }
+
+      .sidebar {
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid var(--border-hairline);
+        padding-right: 0;
+        padding-bottom: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .sidebar-nav {
+        display: none; /* Keep mobile view focused on narrative flow */
+      }
+
+      .dossier-content {
+        max-width: 100%;
+      }
+
+      h2.chapter-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dossier-wrapper">
+
+    <!-- Fixed Left Rail: Identity, Navigation, and Direct Channels -->
+    <aside class="sidebar">
+      <div class="brand-block">
+        <div class="avatar-wrapper">
+          <img src="me.jpg" alt="Allen Christopher Tools">
+        </div>
+        <h1 class="identity-name">Allen C. Tools</h1>
+        <p class="identity-tagline">Systems &bull; Operations &bull; Agentic AI</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <h4>Dossier Index</h4>
+        <ul>
+          <li><a href="#thesis"><span class="nav-num">01</span> The Operational Thesis</a></li>
+          <li><a href="#trajectory"><span class="nav-num">02</span> Career Trajectory</a></li>
+          <li><a href="#flagship"><span class="nav-num">03</span> Case: Yellow Rose IMS</a></li>
+          <li><a href="#systems"><span class="nav-num">04</span> Systems & Tech Range</a></li>
+          <li><a href="#dialogue"><span class="nav-num">05</span> Direct Dialogue</a></li>
+        </ul>
+      </nav>
+
+      <div class="contact-block">
+        <h4>Direct Channels</h4>
+        <div class="contact-links">
+          <a href="mailto:mr@allen.tools?subject=Operational%20Dialogue">mr@allen.tools</a>
+          <a href="https://github.com/kayfay" target="_blank" rel="noopener">github.com/kayfay</a>
+          <a href="https://linkedin.com/in/allentools" target="_blank" rel="noopener">linkedin.com/in/allentools</a>
+          <a href="http://science.allen.tools" target="_blank" rel="noopener">science.allen.tools</a>
+        </div>
+        <div class="status-badge">
+          <span class="status-dot"></span> Available for Impact
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Flowing Editorial Dossier -->
+    <main class="dossier-content">
+
+      <!-- Chapter 01: The Thesis -->
+      <section id="thesis" class="chapter">
+        <span class="chapter-eyebrow">01 / The Core Thesis</span>
+        <h2 class="chapter-title">Where Physical Reality Collides with Software</h2>
+
+        <p class="lead-paragraph">
+          Much of the modern technology industry designs systems for sterile, idealized environments—sandboxes where networks never drop, databases never contain dirty regulatory liabilities, and physical inventories behave predictably like database rows.
+        </p>
+
+        <div class="thesis-quote">
+          &ldquo;Most tech workers solve imaginary problems in pristine code; I solve messy, high-stakes operational problems where physical and business realities collide. I harness agentic engineering and multimodal AI not to generate boilerplate, but to automate real-world workflows that move numbers.&rdquo;
+          <cite>&mdash; Allen Christopher Tools, Operating Philosophy</cite>
+        </div>
+
+        <p>
+          I am experienced in <strong>agentic coding workflows</strong> and build with <strong>multimodal AI models (Gemini)</strong> daily. For me, AI is not a gimmick for generating generic bento-card websites or shallow wrappers. It is a high-leverage force multiplier to audit walk-in coolers, eliminate manual ledger friction, reconcile erratic physical yields, and protect enterprise balance sheets from silent leakage.
+        </p>
+      </section>
+
+      <!-- Chapter 02: Non-Linear Trajectory -->
+      <section id="trajectory" class="chapter">
+        <span class="chapter-eyebrow">02 / Non-Linear Path</span>
+        <h2 class="chapter-title">An Operational Crucible: From the Line to the Enterprise</h2>
+
+        <p>
+          Domain mastery is rarely forged on a straight, corporate ladder. It comes from having skin in the game across operations, risk, governance, and code.
+        </p>
+
+        <div class="trajectory-item">
+          <div class="trajectory-header">
+            <span class="trajectory-role">Front-Line Operations &amp; Inventory Systems</span>
+            <span class="trajectory-meta">Hospitality &amp; Retail</span>
+          </div>
+          <div class="trajectory-org">Yellow Rose &bull; Independent Operations</div>
+          <p class="trajectory-desc">
+            Managed the raw economics of perishable inventory, labor friction, food shrinkage, and supplier variance. This front-line crucible shaped my core engineering discipline: any software that slows down an operator on the floor will be abandoned.
+          </p>
+        </div>
+
+        <div class="trajectory-item">
+          <div class="trajectory-header">
+            <span class="trajectory-role">Data Analyst &bull; Enterprise PII Governance</span>
+            <span class="trajectory-meta">Enterprise Insurance</span>
+          </div>
+          <div class="trajectory-org">Kemper &bull; Jacksonville, FL</div>
+          <p class="trajectory-desc">
+            Engineered regex and data scanning pipelines across production enterprise data lakes—including Snowflake, Oracle, MSSQL, and Postgres. Audited, tagged, and mitigated regulatory Personally Identifiable Information (PII) exposure using Informatica.
+          </p>
+        </div>
+
+        <div class="trajectory-item">
+          <div class="trajectory-header">
+            <span class="trajectory-role">Logistics Automation &amp; Workflow Systems</span>
+            <span class="trajectory-meta">Automotive Supply Chain</span>
+          </div>
+          <div class="trajectory-org">Mercedes-Benz &bull; Jacksonville, FL</div>
+          <p class="trajectory-desc">
+            Automated internal logistics pipelines and parts routing rules. Engineered Java/Selenium automated workflows and synchronized multi-department data tables exported from German manufacturing systems.
+          </p>
+        </div>
+
+        <div class="trajectory-item">
+          <div class="trajectory-header">
+            <span class="trajectory-role">Data Scientist &bull; NLP &amp; Workflow Optimization</span>
+            <span class="trajectory-meta">Healthcare Analytics</span>
+          </div>
+          <div class="trajectory-org">Florida Blue &bull; Jacksonville, FL</div>
+          <p class="trajectory-desc">
+            Conducted clickstream analysis and statistical modeling to optimize contact center workflows. Partnered with cross-functional teams on Natural Language Processing (NLP) text analytics to decode customer service friction.
+          </p>
+      </section>
+
+      <!-- Chapter 03: Flagship Case Study -->
+      <section id="flagship" class="chapter">
+        <span class="chapter-eyebrow">03 / Flagship Case Study</span>
+        <h2 class="chapter-title">Yellow Rose IMS: Physical Yields Meet Edge AI Vision</h2>
+
+        <p class="lead-paragraph">
+          Barbecue is a brutal business of razor-thin margins and physical physics. Raw beef brisket shrinks between 44% and 52% during a 14-hour smoke cycle. Standard inventory management software assumes a 1:1 recipe conversion, leaving operators blind to true meat yields, food costs, and shrinkage.
+        </p>
+
+        <p>
+          Rather than paying thousands of dollars for clunky enterprise restaurant SaaS that kitchen staff refuse to use, I designed and built the <strong>Yellow Rose Inventory Management System</strong> from the ground up.
+        </p>
+
+        <!-- Technical Architecture Box -->
+        <div class="diagram-box">
+          <span class="diagram-title">System Architecture &bull; Edge Intelligence Pipeline</span>
+          <div class="flow-grid">
+            <div class="flow-step">
+              <span class="flow-step-num">STEP 01</span>
+              <div class="flow-step-title">Multimodal Camera</div>
+              <div class="flow-step-desc">Staff snap a shelf photo of Cryovac cases inside the walk-in cooler.</div>
+            </div>
+            <div class="flow-step">
+              <span class="flow-step-num">STEP 02</span>
+              <div class="flow-step-title">Cloudflare Worker</div>
+              <div class="flow-step-desc">Edge middleware processes the payload with zero cold starts.</div>
+            </div>
+            <div class="flow-step">
+              <span class="flow-step-num">STEP 03</span>
+              <div class="flow-step-title">Gemini Vision AI</div>
+              <div class="flow-step-desc">Gemini 1.5 Flash extracts cuts, batch tags, and counts via structured JSON.</div>
+            </div>
+            <div class="flow-step">
+              <span class="flow-step-num">STEP 04</span>
+              <div class="flow-step-title">Yield Reconciliation</div>
+              <div class="flow-step-desc">Clover POS sales match against physical smoker yields in real time.</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="section-heading">Key Engineering Breakthroughs</h3>
+        <p>
+          <strong>1. Multimodal AI Walk-in Shelf Scanner:</strong> Kitchen staff point a phone at walk-in storage racks. The image is compressed on-device and forwarded through a secure Cloudflare Worker to <code>gemini-1.5-flash</code>. Gemini outputs a strictly structured JSON catalog of detected brisket packages, pork butts, and soda bibs with high accuracy—eliminating nightly clipboard manual counts.
+        </p>
+        <p>
+          <strong>2. Dynamic Protein Depletion Math:</strong> Built a Python depletion engine that continuously reconciles Clover POS register receipts against raw butcher weights and true cook yields. The system separates kitchen trimming loss, cook shrinkage, and unaccounted variance.
+        </p>
+        <p>
+          <strong>3. Two-Way Edge &amp; Ledger Synchronization:</strong> SQLite handles local high-speed caching and audit history, while bi-directional Google Sheets API integrations ensure the culinary team and management see live cost-of-goods figures on familiar interfaces without training overhead.
+        </p>
+      </section>
+
+      <!-- Chapter 04: Systems Range & Tech Ledger -->
+      <section id="systems" class="chapter">
+        <span class="chapter-eyebrow">04 / Systems Ledger</span>
+        <h2 class="chapter-title">Technical Domain Range</h2>
+
+        <p>
+          A consolidated view of the tools and systems applied across physical operations, enterprise databases, and cloud runtimes:
+        </p>
+
+        <table class="systems-table">
+          <thead>
+            <tr>
+              <th style="width: 32%;">Domain &amp; Stack</th>
+              <th>Real-World Operational Outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="systems-domain">Agentic AI &amp; Multimodal Vision</span>
+                <span class="systems-stack">Gemini 1.5 Flash / Pro, Structured JSON, Tool Use</span>
+              </td>
+              <td class="systems-impact">
+                Designed and shipped multimodal vision pipelines auditing physical shelf inventory; practiced agentic pair programming to architect and deploy systems rapidly.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="systems-domain">Enterprise Data Governance</span>
+                <span class="systems-stack">Snowflake, Oracle, MSSQL, Postgres, Informatica</span>
+              </td>
+              <td class="systems-impact">
+                Engineered complex regex scans across disparate relational engines and data warehouses to remediate PII risk and maintain compliance.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="systems-domain">Operational Automation</span>
+                <span class="systems-stack">Python, Java, Selenium, Bash, Systemd</span>
+              </td>
+              <td class="systems-impact">
+                Automated multi-department German parts tables and routing workflows for Mercedes-Benz; scheduled headless POS sync daemons and automated encrypted backups.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="systems-domain">Edge Runtimes &amp; POS Integrations</span>
+                <span class="systems-stack">Cloudflare Workers, Clover REST API, SQLite, Google Sheets</span>
+              </td>
+              <td class="systems-impact">
+                Architected serverless edge middleware connecting commercial POS hardware to real-time inventory spreadsheets and local relational stores.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="systems-domain">Customer Telemetry &amp; Analytics</span>
+                <span class="systems-stack">Clickstream Telemetry, Statistical Modeling, NLP</span>
+              </td>
+              <td class="systems-impact">
+                Modeled customer call-center clickstream friction and interaction patterns for Florida Blue to streamline customer service operations.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Chapter 05: Direct Dialogue -->
+      <section id="dialogue" class="chapter">
+        <span class="chapter-eyebrow">05 / Direct Dialogue</span>
+        <h2 class="chapter-title">Starting a Conversation</h2>
+
+        <p class="lead-paragraph">
+          I am energized by high-leverage challenges at the intersection of business operations, data systems, and agentic workflows.
+        </p>
+
+        <p>
+          Whether you need someone to diagnose where your operational data is leaking margin, build custom edge automation that connects physical workflows to the cloud, or architect systems that outlast off-the-shelf software—let's speak directly.
+        </p>
+
+        <div class="signoff-box">
+          <h3>Ready to solve a hard problem?</h3>
+          <p>
+            Coffee, tea, or a focused working session. Send me an email or connect directly on professional channels.
+          </p>
+          <div class="signoff-actions">
+            <a href="mailto:mr@allen.tools?subject=Operational%20Dialogue" class="btn-editorial">Email: mr@allen.tools</a>
+            <a href="https://linkedin.com/in/allentools" target="_blank" rel="noopener" class="btn-editorial-secondary">LinkedIn Profile</a>
+            <a href="https://github.com/kayfay" target="_blank" rel="noopener" class="btn-editorial-secondary">GitHub: @kayfay</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
 </html>
