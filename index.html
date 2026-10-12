@@ -260,26 +260,56 @@
       font-feature-settings: "liga" 1, "dlig" 1;
     }
 
-    /* ── The Manifesto Pull Quote (Editorial Flow) ── */
+    /* ── The Manifesto Pull Quote (Pure Typography) ── */
     .thesis-quote {
-      margin: 1.75rem 0;
-      padding: 0.25rem 0 0.25rem 1.35rem;
-      border-left: 2px solid var(--accent-rust);
-      font-size: 1.15rem;
-      line-height: 1.62;
+      margin: 2.2rem 0;
+      padding: 0;
+      border: none;
+      font-size: 1.26rem;
+      line-height: 1.6;
       font-style: italic;
       color: var(--text-ink);
+      letter-spacing: -0.01em;
     }
 
     .thesis-quote cite {
       display: block;
-      margin-top: 0.5rem;
+      margin-top: 0.65rem;
       font-style: normal;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-secondary);
+    }
+
+    /* ── Editorial Key Points List ── */
+    .editorial-list {
+      list-style: none;
+      margin: 1.4rem 0 2rem;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .editorial-list li {
+      position: relative;
+      padding-left: 1.35rem;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--text-ink);
+    }
+
+    .editorial-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent-rust);
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
     }
 
     /* ── Trajectory Ledger Items ── */
@@ -600,8 +630,15 @@
         </blockquote>
 
         <p>
-          I am experienced in <strong>agentic coding workflows</strong> and build with <strong>multimodal AI models (Gemini)</strong> daily. For me, AI is not a gimmick for generating generic bento-card websites or shallow wrappers. It is a high-leverage force multiplier to audit walk-in coolers, eliminate manual ledger friction, reconcile erratic physical yields, and protect enterprise balance sheets from silent leakage.
+          I work in <strong>agentic coding workflows</strong> and build with <strong>multimodal AI models (Gemini)</strong> daily. Rather than producing generic wrappers or superficial prototypes, I deploy agentic AI as an operational force multiplier:
         </p>
+
+        <ul class="editorial-list">
+          <li><strong>Physical Inventory Audits:</strong> Visual shelf scans that inspect walk-in coolers without manual clipboard friction.</li>
+          <li><strong>Yield Reconciliation:</strong> Balancing physical smokehouse shrinkage against live POS transactions in real time.</li>
+          <li><strong>Margin Protection:</strong> Stopping silent balance sheet leakage where real-world kitchen operations and digital ledgers drift.</li>
+          <li><strong>Regulatory Governance:</strong> Enforcing automated PII and compliance audits across enterprise data lakes.</li>
+        </ul>
       </section>
 
       <!-- Chapter 02: Non-Linear Trajectory -->
@@ -698,15 +735,17 @@
         </div>
 
         <h3 class="section-heading">Key Engineering Breakthroughs</h3>
-        <p>
-          <strong>1. Multimodal AI Walk-in Shelf Scanner:</strong> Kitchen staff point a phone at walk-in storage racks. The image is compressed on-device and forwarded through a secure Cloudflare Worker to <code>gemini-1.5-flash</code>. Gemini outputs a strictly structured JSON catalog of detected brisket packages, pork butts, and soda bibs with high accuracy—eliminating nightly clipboard manual counts.
-        </p>
-        <p>
-          <strong>2. Dynamic Protein Depletion Math:</strong> Built a Python depletion engine that continuously reconciles Clover POS register receipts against raw butcher weights and true cook yields. The system separates kitchen trimming loss, cook shrinkage, and unaccounted variance.
-        </p>
-        <p>
-          <strong>3. Two-Way Edge &amp; Ledger Synchronization:</strong> SQLite handles local high-speed caching and audit history, while bi-directional Google Sheets API integrations ensure the culinary team and management see live cost-of-goods figures on familiar interfaces without training overhead.
-        </p>
+        <ul class="editorial-list">
+          <li>
+            <strong>Multimodal Shelf Vision:</strong> Kitchen staff capture a walk-in storage photo. The image routes via a lightweight Cloudflare Worker to <code>gemini-1.5-flash</code>, returning structured JSON counts of briskets, pork butts, and soda bibs—eliminating manual clipboard counts.
+          </li>
+          <li>
+            <strong>Real-Time Yield Reconciliation:</strong> A custom Python depletion engine compares Clover POS register receipts against raw butcher weights and physical cook yields, isolating kitchen trimming loss, smoker shrinkage, and unaccounted variance.
+          </li>
+          <li>
+            <strong>Two-Way Edge Sync:</strong> High-speed local SQLite caching paired with bi-directional Google Sheets API synchronization delivers live cost-of-goods figures to floor managers without software training overhead.
+          </li>
+        </ul>
       </section>
 
       <!-- Chapter 04: Systems Range & Tech Ledger -->
