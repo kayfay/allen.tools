@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Github, Linkedin, MapPin, Globe } from 'lucide-react';
+import { Menu, X, Github, MapPin, Globe } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { CopyButton } from '../ui/CopyButton';
 
@@ -59,9 +59,7 @@ export const Sidebar = () => {
                             <a href="https://github.com/kayfay" target="_blank" className="text-slate-400 hover:text-primary transition-colors">
                                 <Github size={20} />
                             </a>
-                            <a href="https://linkedin.com/in/allentools" target="_blank" className="text-slate-400 hover:text-primary transition-colors">
-                                <Linkedin size={20} />
-                            </a>
+
                             <CopyButton
                                 value="allen@allen.tools"
                                 variant="icon"
